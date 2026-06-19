@@ -19,9 +19,9 @@ export async function newsAgent(query: string) {
   const news = await getNewsSignals(newsQuery);
 
   const articleSummaries = news.articles
-    .slice(0, 5)
-    .map(a => `- ${a.title}: ${a.description ?? ""}`)
-    .join("\n");
+  .slice(0, 5)
+  .map((a: any) => `- ${a.title}: ${a.description ?? ""}`)
+  .join("\n");
 
   const prompt = `
 You are a news intelligence analyst.
